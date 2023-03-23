@@ -14,12 +14,12 @@ public class Door : MonoBehaviour
    
   
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         // Vérifier si le personnage quitte la zone de détection
         if (other.tag == "Player" )
         {
-            door.SetActive(true);
+            door.SetActive(false);
         }
 
     }
