@@ -1,28 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Door : MonoBehaviour
 {
     public GameObject door;
-   
+    public DoorDetection doorDetection;
 
-   
-
-  
-
-   
-  
-
-    void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        // Vérifier si le personnage quitte la zone de détection
-        if (other.tag == "Player" )
+        if(doorDetection.inrange == true && (Keyboard.current.eKey.wasPressedThisFrame))
         {
             door.SetActive(false);
         }
-
     }
 
-    
+
 }
